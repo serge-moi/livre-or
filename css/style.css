@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
+
+/* ////////// HEADER ////////// */
+
+
+#header-ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 20px;
+    box-shadow: 1px 1px 3px black;
+}
+
+.lien-head{
+    text-decoration: none;
+    font-family: 'Pacifico', cursive;
+    color: black;
+    padding: 20px;
+}
+
+.lien-head:hover{
+    background-color: brown;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.lien-head:hover > span{
+    color:black ;
+}
+
+span{
+    color: white;
+    font-family: 'Russo One', sans-serif;
+}
+
+#header-body{
+    margin: 0;
+    padding: 0;
+    background-color: dimgray;
+}
+
+#just-header{
+    background-color: darkgoldenrod;
+}
+
+#header-main{
+    height: 600px;
+    width: 800px;
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*////////// INDEX //////////*/
+
+#welcome{
+    color: cornsilk;
+    font-family: 'Righteous', cursive;
+    font-size: 30px;
+    text-shadow: 0px 8px 8px black;
+}
+
+#please{
+    border-radius: 10px;
+    box-shadow: 1px 1px 14px black;
+    border: 11px ridge #887070;
+    margin-bottom: 5px;
+}
+
+#plz-log{
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 20px;
+    margin-top: 30%;
+}
+
+#if-not-acc{
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 16px;
+    border-top: 5px dotted;
+    padding-top: 20px;
+}
+
+#log-index, #sign{
+    font-family: 'Saira Stencil One', cursive;
+    color: #da9c05;
+    text-shadow: 0px 2px 4px black;
+}
+
+
+/*////////// COMMENTAIRE //////////*/
+
+
+
+#told{
+    border-radius: 260px;
+    width: 300px;
+    box-shadow: 1px 1px 10px black;
+}
+
+#to-coment{
+    font-family: 'Fredericka the Great', cursive;
+}
+
+#co-coment{
+    font-family: 'Saira Stencil One', cursive;
+    color: #da9c05;
+    text-shadow: 0px 2px 4px black;
+}
+
+#form-com{
+    display: flex;
+    flex-direction: column;
+    border: 1px ridge black;
+    box-shadow: 0px 1px 7px black;
+}
+
+#hey{
+    font-family: 'Righteous', cursive;
+}
+
+textarea[name=comment]{
+    resize : both;
+    min-width : 100px;
+    min-height : 100px;
+    max-width : 400px;
+    max-height : 400px;
+    padding: 10px;
+    background-color: cornsilk;
+}
+
+#if-sendcoment{
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.policia{
+    font-family: 'Fredericka the Great', cursive;
+}
+
+#gg-send{
+    color: #a8ef00;
+    animation: colorblink 2s infinite;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+@keyframes colorblink { 
+0% { }
+50% { color:orangered; } 
+}
+
+#com-book{
+    font-family: 'Saira Stencil One', cursive;
+    color: #da9c05;
+    text-shadow: 0px 2px 4px black;
+}
+
+
+
+
+
+/*////////// PROFIL //////////*/
+
+#edit-form{
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    align-items: center;
+    border: 1px solid black;
+    padding: 60px;
+    background-color: #949191;
+    box-shadow: 0px 1px 7px black;
+    border-radius: 7px;
+}
+
+#edit-form *{
+    margin: 5px;
+}
+
+input[type="text"], input[type="password"]{
+    padding: 10px;
+    width: 220px;
+}
+
+label{
+    width: 245px;
+    font-family: 'Odibee Sans', cursive;
+}
+
+#edit-title{
+    font-family: 'Mansalva', cursive;
+}
+
+.prof-put{
+    border: 4px solid #392828;
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px saddlebrown;
+}
+
+#profil-main{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 610px;
+}
+
+#prof-passput{
+    margin-bottom: 20px;
+}
+
+#but-edit{
+    font-family: 'Questrial', sans-serif;
+    padding: 10px 30px;
+}
+
+
+
+/*//////// LIVRE D'OR ////////*/
+
+
+
+#form-connect{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 150px;
+    justify-content: space-around;
+}
+
+#main-connect{
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#inp-log{
+    display: flex;
+    flex-direction: column;
+    height: 90px;
+    justify-content: space-evenly;
+}
+
+#co-h2{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+    text-decoration: underline;
+    color: #618aa2;
+    text-shadow: 1px 1px 3px black;
+}
+
+
+#sub-h2{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+    text-decoration: underline;
+    color: #180048;
+    text-shadow: 1px 1px 3px black;
+}
+
+#main-goldbook{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#div-coment{
+    display: flex;
+    flex-direction: column;
+    border: 3px ridge azure;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+#com{
+    width: 200px;
+    margin-top: 10px;
+    word-break: break-word;
+}
+
+#post-coment{
+    width: 200px;
+    overflow: hidden;
+    border-bottom: 3px solid darkseagreen;
+    padding-bottom: 10px;
+}

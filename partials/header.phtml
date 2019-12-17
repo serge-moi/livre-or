@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body id="header-body">
+        <header id="just-header">
+            <nav>
+                <ul id="header-ul">
+                    <li><a class="lien-head" href="index.php">Home</a></li>
+                    <li><a class="lien-head" href="commentaire.php">Comments</a></li>
+                    <li><a class="lien-head" href="livre-or.php">Golden Book</a></li>
+                    <?php if(!isset($_SESSION["login"])): ?>
+                    <li><a class="lien-head" href="inscription.php">Inscription</a></li>
+                    <li><a class="lien-head" href="connexion.php">Connexion</a></li>
+                    <?php else : ?>
+                    <li><a class="lien-head" href="profil.php">User Profile</a></li>
+                    <li><a class="lien-head" href="index.php?destroy=die">Deconnexion <span>(<?= $_SESSION["login"] ?>)</span></a></li>
+                    <?php endif; ?>
+                </ul>
+            </nav>
+        </header>
+        
+<?php
+
+if(isset($_GET['destroy'])){
+    session_destroy();
+    header("Location:index.php");
+}
+
+?>
