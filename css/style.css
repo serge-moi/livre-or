@@ -8,6 +8,12 @@
 @import url('https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Londrina+Solid&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Niconne&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Geo&display=swap');
+
+
+
 
 
 /* ////////// HEADER ////////// */
@@ -236,6 +242,67 @@ label{
 
 
 
+
+#co-h2{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+    text-decoration: underline;
+    color: #618aa2;
+    text-shadow: 1px 1px 3px black;
+}
+
+#main-goldbook{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#div-coment{
+    display: flex;
+    flex-direction: column;
+    border: 3px ridge azure;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+#com{
+    width: 246px;
+    margin-top: 10px;
+    word-break: break-word;
+    font-family: 'Niconne', cursive;
+}
+
+#post-coment{
+    width: 240px;
+    overflow: hidden;
+    border-bottom: 3px solid darkseagreen;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#value-date{
+    font-family: 'Odibee Sans', cursive;
+}
+
+#value-name{
+    font-family: 'Londrina Solid', cursive;
+}
+
+#error-logmdp{
+    position: absolute;
+    top: 610px;
+    left: 815px;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 19px;
+}
+
+
+/*////////// INSCRIPTION //////////*/
+
+
+
 #form-connect{
     display: flex;
     flex-direction: column;
@@ -259,15 +326,6 @@ label{
     justify-content: space-evenly;
 }
 
-#co-h2{
-    font-family: 'Bebas Neue', cursive;
-    font-size: 30px;
-    text-decoration: underline;
-    color: #618aa2;
-    text-shadow: 1px 1px 3px black;
-}
-
-
 #sub-h2{
     font-family: 'Bebas Neue', cursive;
     font-size: 30px;
@@ -276,29 +334,10 @@ label{
     text-shadow: 1px 1px 3px black;
 }
 
-#main-goldbook{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#div-coment{
-    display: flex;
-    flex-direction: column;
-    border: 3px ridge azure;
-    margin-top: 15px;
-    padding: 10px;
-}
-
-#com{
-    width: 200px;
-    margin-top: 10px;
-    word-break: break-word;
-}
-
-#post-coment{
-    width: 200px;
-    overflow: hidden;
-    border-bottom: 3px solid darkseagreen;
-    padding-bottom: 10px;
+#login-used{
+    position: absolute;
+    left: 880px;
+    top: 370px;
+    font-family: 'Geo', sans-serif;
+    font-size: 20px;
 }

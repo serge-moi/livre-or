@@ -11,6 +11,7 @@ if(isset($_POST["login"])){
 
 if(isset($_POST["password"])){
     $password = $_POST["password"];
+    $hash = password_hash($password, PASSWORD_DEFAULT);
 } else {
     $password = "";
 }
@@ -23,7 +24,7 @@ if(isset($_POST["confirm"])){
     $resultat = mysqli_fetch_all($query);
 
     if(!empty($resultat)){
-        echo "Ce login est déjà pris";
+        echo "<mark id=\"login-used\">Ce login est déjà pris</mark>";
     } else {
         $requete = "INSERT INTO utilisateurs (login, password) VALUES('$login', '$password')";
         $query = mysqli_query($connexion, $requete);
@@ -39,8 +40,8 @@ if(isset($_POST["confirm"])){
         <h2 id="sub-h2">Inscription</h2>
         <form id="form-connect" action="inscription.php" method="POST">
             <div id="inp-log">
-                <input type="text" name="login" placeholder="Votre login">
-                <input type="password" name="password" placeholder="password" minlength="5" maxlength="10">
+                <input type="text" name="login" placeholder="Votre login" required>
+                <input type="password" name="password" placeholder="password" minlength="5" maxlength="10" required>
             </div>
             <button type="submit" name="confirm">s'inscrire</button>
         </form>

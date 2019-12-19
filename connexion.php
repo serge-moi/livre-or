@@ -9,9 +9,16 @@ $resultat = mysqli_fetch_all($query);
 
 $account = false;
 
+if(isset($_POST["password"])){
+    $password = $_POST["password"];
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+} else {
+    $password = "";
+}
+
 if(isset($_POST["connexion"]) == true){
     foreach($resultat as $key => $value){
-        if($resultat[$key][1] == $_POST["login"] && password_verify($_POST["password"], $resultat[$key][2])){
+        if($resultat[$key][1] == $_POST["login"] && password_verify($password,$hash)){
             $account = true;
             $_SESSION['id']=$resultat[$key][0] ;
         break;
@@ -22,7 +29,7 @@ if(isset($_POST["connexion"]) == true){
         header("Location:index.php");
         echo "Bienvenue".$_SESSION['login'];
     } else {
-        echo "Login ou mot de passe incorrect";
+        echo "<div id=\"error-logmdp\">Login ou mot de passe incorrect</div>";
     }
 }
 
