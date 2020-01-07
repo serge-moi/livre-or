@@ -27,12 +27,14 @@ if(isset($_POST["comment"])&&$_POST["comment"]!="" && isset($_SESSION["id"])){
 }
 
 if(isset($_POST["comment"])): ?>
-    <div id="if-sendcoment">
+<section>
+    <article id="if-sendcoment">
         <div id="gg-send">Félicitations, votre commentaire a été envoyé avec succès !</div>
         <div class="policia">Vous pouvez visiter la page</div> 
         <a href="livre-or.php" id="com-book">Golden Book</a> 
         <div class="policia">pour voir votre commentaire</div>
-    </div>
+    </article>
+</section>
 <?php endif; ?>
 
 

@@ -2,58 +2,58 @@
 
 session_start();
 
-$connexion = mysqli_connect("localhost", "root", "", "livreor");
-$requete = "SELECT * FROM utilisateurs";
-$query = mysqli_query($connexion, $requete);
-$resultat = mysqli_fetch_all($query);
-
-$account = false;
-
-if(isset($_POST["password"])){
-    $password = $_POST["password"];
-    $hash = password_hash($password, PASSWORD_DEFAULT);
-} else {
-    $password = "";
+if(isset($_SESSION["login"])){
+    header("Location: index.php");
+    die;
 }
 
-if(isset($_POST["connexion"]) == true){
-    foreach($resultat as $key => $value){
-        if($resultat[$key][1] == $_POST["login"] && password_verify($password,$hash)){
-            $account = true;
-            $_SESSION['id']=$resultat[$key][0] ;
-        break;
+if(isset($_POST["formconnexion"])){
+    $login = filter_input(INPUT_POST, "login", FILTER_SANITIZE_SPECIAL_CHARS);
+    $password = filter_input(INPUT_POST, "password");
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+    if(!empty($login) && !empty($password)){
+        $connexion = mysqli_connect("localhost", "root", "", "livreor");
+        $requete = "SELECT * FROM utilisateurs WHERE login = \"$login\"";
+        $query = mysqli_query($connexion, $requete);
+        $resultat = mysqli_fetch_all($query);
+        if(!empty($resultat)){
+            if(password_verify($password, $resultat[0][2])){
+                $_SESSION['message3'] = "connexion effectué";
+                $_SESSION["login"] = $login;
+                $_SESSION["password"] = $password;
+                header("Location:index.php");
+            }
+            else{
+                $erreur = "Mauvais login ou mot de passe !";
+            }
+        }
+        else{
+            $erreur = "Cet identifiant n'existe pas";
         }
     }
-    if($account == true){
-        $_SESSION["login"] = $_POST["login"];
-        header("Location:index.php");
-        echo "Bienvenue".$_SESSION['login'];
-    } else {
-        echo "<div id=\"error-logmdp\">Login ou mot de passe incorrect</div>";
+    else{
+        $erreur = "Tous les champs doivent être complétés !";
     }
 }
 
 if(!isset($_SESSION["login"])):
     require("partials/header.phtml"); ?>
     <main id="main-connect">
-        <h2 id="co-h2">Connexion</h2>
-        <form id="form-connect" action="" method="POST">
+        <div>
+            <h2 id="co-h2">Connexion</h2>
+        </div>
+        <form id="form-connect2" method="POST" action="">
             <div id="inp-log">
-                <input type="text" name="login" placeholder="login">
-                <input type="password" name="password" placeholder="password">
+                <input type="text" name="login" placeholder="Login">
+                <input type="password" name="password" placeholder="Mot de passe">
+                <input type="submit" name="formconnexion" value="Se connecter !">
             </div>
-            <button type="submit" name="connexion">se connecter</button>
         </form>
+        <?php if(isset($erreur)):
+            echo $erreur;
+        endif; ?>
     </main>
 <?php require("partials/footer.phtml"); 
 endif;
-
-if(isset($_POST["login"])){
-    $login = $_POST["login"];
-} else {
-    $login = "";
-}
-
-mysqli_close($connexion);
 
 ?>
